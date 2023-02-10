@@ -41,11 +41,23 @@
 const nodesList = [];
 
 class Nodes {
+  constructor() {
+    this.width = window.innerWidth;
+    this.height = window.innerHeight;
+    this.root = document.getElementById('node-container');
+  }
+
+  generate(quantity) {
+    for (let i = 0; i < quantity; i++) {
+      const raio = Math.floor(Math.random() * 60 + 60);
+      const nome = `Node${i}`;
+      let node = { id: i, name: nome, size: raio };
+      nodesList.push(node);
+    }
+  }
 
 
-
-
-
+  
 
 
 
