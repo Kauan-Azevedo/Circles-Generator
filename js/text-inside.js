@@ -67,8 +67,8 @@ class Circles {
 }
 
 const circleGenerator = new Circles();
-circleGenerator.generate(2);
+circleGenerator.generate(30);
 circleGenerator.setPosition();
 circleGenerator.renderNode(circlesList);
 
-circleGenerator.checkNodes();
+// circleGenerator.checkNodes();
