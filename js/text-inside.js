@@ -113,28 +113,3 @@ nodeGenerator.setPosition();
 nodeGenerator.renderNode(nodesList);
 
 nodeGenerator.checkNodes();
-
-// const el = document.getElementById('node-container');
-// let primeiro = nodesList[0];
-// let segundo = nodesList[1];
-// const laco = document.createElement('div');
-
-// const deltaX =
-//   primeiro.x > segundo.x ? primeiro.x : segundo.x / 2 - primeiro.size;
-// const deltaY =
-//   segundo.y > primeiro.y ? segundo.y : primeiro.y / 2 - segundo.size;
-// const radian = Math.atan2(deltaY, deltaX);
-// const degree = radian * (180 / Math.PI);
-// laco.style.width = `${
-//   primeiro.x - segundo.x < 1 ? segundo.x - primeiro.x : primeiro.x - segundo.x
-// }px`;
-// laco.style.height = `1px`;
-// laco.style.border = '1px solid black';
-// laco.style.position = 'absolute';
-// laco.style.left = `${primeiro.x - primeiro.size / 2}px`;
-// laco.style.top = `${primeiro.y - primeiro.size / 2}px`;
-// laco.style.transformOrigin = 'center left';
-// laco.style.rotate = `${degree}deg`;
-// el.appendChild(laco);
-
-// console.log(laco);
