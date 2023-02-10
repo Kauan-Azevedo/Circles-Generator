@@ -1,74 +1,74 @@
-const nodesList = [];
-class Nodes {
+const circlesList = [];
+class Circles {
   constructor() {
     this.width = window.innerWidth;
     this.height = window.innerHeight;
-    this.root = document.getElementById('node-container');
+    this.root = document.getElementById('circle-container');
   }
 
   generate(quantity) {
     for (let i = 0; i < quantity; i++) {
       const raio = Math.floor(Math.random() * 60 + 60);
-      const nome = `Node${i}`;
-      let node = { id: i, name: nome, size: raio };
-      nodesList.push(node);
+      const nome = `Circle${i}`;
+      let circle = { id: i, name: nome, size: raio };
+      circlesList.push(circle);
     }
   }
 
   setPosition() {
-    for (let node of nodesList) {
-      node.x = Math.floor(Math.random() * this.width) + 1;
-      node.y = Math.floor(Math.random() * this.height) + 1;
+    for (let circle of circlesList) {
+      circle.x = Math.floor(Math.random() * this.width) + 1;
+      circle.y = Math.floor(Math.random() * this.height) + 1;
     }
   }
 
   checkNodes() {
-    for (let node of nodesList) {
-      console.log(node);
+    for (let circle of circlesList) {
+      console.log(circle);
     }
   }
 
-  renderNode(nodes) {
+  renderNode(circles) {
     let el = this.root;
-    for (let nod of nodes) {
-      let node = document.createElement('div');
-      node.style.minWidth = `${nod.size}px`;
-      node.style.minHeight = `${nod.size}px`;
-      node.style.fontSize = '14px';
-      node.style.border = '1px solid black';
-      node.style.borderRadius = '100%';
-      node.style.textAlign = 'center';
-      node.style.position = 'absolute';
-      node.style.display = 'flex';
-      node.style.flexDirection = 'column';
-      node.style.alignItems = 'center';
-      node.style.justifyContent = 'center';
+    for (let circ of circles) {
+      let circle = document.createElement('div');
+      circle.style.minWidth = `${circ.size}px`;
+      circle.style.minHeight = `${circ.size}px`;
+      circle.style.fontSize = '14px';
+      circle.style.border = '1px solid black';
+      circle.style.borderRadius = '100%';
+      circle.style.textAlign = 'center';
+      circle.style.position = 'absolute';
+      circle.style.display = 'flex';
+      circle.style.flexDirection = 'column';
+      circle.style.alignItems = 'center';
+      circle.style.justifyContent = 'center';
 
       let posX =
-        nod.x - nod.size <= 0
-          ? nod.x + nod.size
-          : nod.x - nod.size && nod.x + nod.size >= nod.x
-          ? nod.x - nod.size
-          : nod.x + nod.size;
+        circ.x - circ.size <= 0
+          ? circ.x + circ.size
+          : circ.x - circ.size && circ.x + circ.size >= circ.x
+          ? circ.x - circ.size
+          : circ.x + circ.size;
       let posY =
-        nod.y - nod.size <= 0
-          ? nod.y + nod.size
-          : nod.y - nod.size && nod.y + nod.size >= nod.y
-          ? nod.y - nod.size
-          : nod.y + nod.size;
+        circ.y - circ.size <= 0
+          ? circ.y + circ.size
+          : circ.y - circ.size && circ.y + circ.size >= circ.y
+          ? circ.y - circ.size
+          : circ.y + circ.size;
 
-      node.style.left = `${posX}px`;
-      node.style.top = `${posY}px`;
-      let nodeName = document.createTextNode(nod.name);
-      node.appendChild(nodeName);
-      el.appendChild(node);
+      circle.style.left = `${posX}px`;
+      circle.style.top = `${posY}px`;
+      let circleName = document.createTextNode(circ.name);
+      circle.appendChild(circleName);
+      el.appendChild(circle);
     }
   }
 }
 
-const nodeGenerator = new Nodes();
-nodeGenerator.generate(2);
-nodeGenerator.setPosition();
-nodeGenerator.renderNode(nodesList);
+const circleGenerator = new Circles();
+circleGenerator.generate(2);
+circleGenerator.setPosition();
+circleGenerator.renderNode(circlesList);
 
-nodeGenerator.checkNodes();
+circleGenerator.checkNodes();
