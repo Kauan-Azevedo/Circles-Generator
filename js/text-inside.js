@@ -56,10 +56,18 @@ class Nodes {
     }
   }
 
+  setPosition() {
+    for (let node of nodesList) {
+      node.x = Math.floor(Math.random() * this.width) + 1;
+      node.y = Math.floor(Math.random() * this.height) + 1;
+    }
+  }
 
-  
-
-
+  checkNodes() {
+    for (let node of nodesList) {
+      console.log(node);
+    }
+  }
 
 
 }
