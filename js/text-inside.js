@@ -38,7 +38,17 @@
 // const nodes = new Nodes();
 // nodes.multipleCreate(10, 'node-container', 'node');
 
+const nodesList = [];
+
+class Nodes {
 
 
 
+
+
+
+
+
+
+}
 
