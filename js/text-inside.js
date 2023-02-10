@@ -69,6 +69,42 @@ class Nodes {
     }
   }
 
+  renderNode(nodes) {
+    let el = this.root;
+    for (let nod of nodes) {
+      let node = document.createElement('div');
+      node.style.minWidth = `${nod.size}px`;
+      node.style.minHeight = `${nod.size}px`;
+      node.style.fontSize = '14px';
+      node.style.border = '1px solid black';
+      node.style.borderRadius = '100%';
+      node.style.textAlign = 'center';
+      node.style.position = 'absolute';
+      node.style.display = 'flex';
+      node.style.flexDirection = 'column';
+      node.style.alignItems = 'center';
+      node.style.justifyContent = 'center';
 
+      let posX =
+        nod.x - nod.size <= 0
+          ? nod.x + nod.size
+          : nod.x - nod.size && nod.x + nod.size >= nod.x
+          ? nod.x - nod.size
+          : nod.x + nod.size;
+      let posY =
+        nod.y - nod.size <= 0
+          ? nod.y + nod.size
+          : nod.y - nod.size && nod.y + nod.size >= nod.y
+          ? nod.y - nod.size
+          : nod.y + nod.size;
+
+      node.style.left = `${posX}px`;
+      node.style.top = `${posY}px`;
+      let nodeName = document.createTextNode(nod.name);
+      node.appendChild(nodeName);
+      el.appendChild(node);
+    }
+  }
 }
+
 
