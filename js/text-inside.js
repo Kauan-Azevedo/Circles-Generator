@@ -28,10 +28,15 @@ class Nodes {
     el.appendChild(node);
   }
 
-
+  multipleCreate(quantity, id, text) {
+    for (let i = 0; i <= quantity; i++) {
+      this.create(id, text, quantity);
+    }
+  }
 }
 
-
+const nodes = new Nodes();
+nodes.multipleCreate(10, 'node-container', 'node');
 
 
 
