@@ -107,4 +107,11 @@ class Nodes {
   }
 }
 
+const nodeGenerator = new Nodes();
+nodeGenerator.generate(2);
+nodeGenerator.setPosition();
+nodeGenerator.renderNode(nodesList);
+
+nodeGenerator.checkNodes();
+
 
